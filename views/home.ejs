@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+       <div class="ui massive menu">
+        </div>
+
+       
+            <div class="header item">
+               
+        </div>
+        
+            <br>
+            <br>
+            <br>
+    
+            <div class="ui container">
+                </div>
+            <form action="/add" class="ui form" method="POST">
+                <div class="ui five fields">
+
+                   
+                    <div class="field" style="margin: auto;width: 220px;">
+            <label for="url" class="ui header black"  ></label>
+        <input type="text" name="url" placeholder="Enter the website URL">
+        
+                    </div>
+                   
+                    </div>
+                    <div class="ui fluid field">
+                    <input type="submit" value="Get insights" class="ui button green fluid">
+                </div>
+                </form>
+                <br><br>
+                <table class="ui green table">
+                <thead>
+                    <tr>
+                    <th>Domain Name</th>
+                    <th>Word Count</th>
+                    <th>Favourites</th>
+                    
+                   
+                    <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+               
+                        <% web.forEach((web)=>{ %>
+                            <tr>
+                            <td><%- web.url  %></td>
+                           
+                            <td></td>
+                            
+                            <td><%- web.fav  %></td>
+
+                            
+                            <td><a  class="ui red button" href="/delete/<%= web._id %>" >REMOVE<i></i></a></td>
+                            <td><a for="fav" class="ui blue button" href="/favourite/<%= web._id %>" >ADD TO FAV<i></i></a></td>
+                           
+                            </tr>
+                               
+                                <% }); %>
+                               
+                               
+                            </tbody>
+                           
+        </table>
+       
+    </div>
+        </div>        
+    <script src="/js/semantic.min.js"></script>
+    
+</body>
+</html>
